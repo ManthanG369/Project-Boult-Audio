@@ -16,7 +16,7 @@ nav {
 nav img {
         height: 70px;
         position: absolute;
-        top: 17px;
+        /* top: 1px; */
         left: 12%;
 }
 
