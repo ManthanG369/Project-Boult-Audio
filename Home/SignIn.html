@@ -2,67 +2,89 @@
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>signin</title>
-        <link rel="stylesheet" href="header.css">
-        <link rel="stylesheet" href="signIn.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="signIn.css">
 </head>
 
 <body>
-        <nav>
-                <a href="index.html">
-                        <img src="https://cdn.shopify.com/s/files/1/0378/5968/8492/files/BOULT-Audio_White-text_100x.png?v=1599473770"
-                                alt="logo">
-                </a>
+    <nav>
+        <a href="index.html">
+            <img src="https://cdn.shopify.com/s/files/1/0378/5968/8492/files/BOULT-Audio_White-text_100x.png?v=1599473770" alt="logo">
+        </a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Product</a>
                 <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Product</a>
-                                <ul>
-                                        <a href="#">
-                                                <li onclick="TrueWireless(event)"> TRUE WIRELESS</li>
-                                        </a>
-                                        <a href="#">
-                                                <li onclick="InEar(event)"> IN-EAR</li>
-                                        </a>
-                                        <a href="#">
-                                                <li onclick="OverEar(event)"> OVER-EAR</li>
-                                        </a>
-                                        <a href="#">
-                                                <li onclick="Wired(event)">WIRED</li>
-                                        </a>
-                                        <a href="#">
-                                                <li onclick="Speakers(event)">SPEAKERS</li>
-                                        </a>
-
-                                </ul>
-                        </li>
-
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Warranty Registration</a></li>
-                        <li><a href="#">#GetSetBoult</a></li>
-                        <li class="btn"> <a href=""> <img src="https://cdn-icons-png.flaticon.com/128/266/266134.png"
-                                                alt=""></a></i></li>
-
-
+                    <a href="#">
+                        <li onclick="TrueWireless(event)"> TRUE WIRELESS</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="InEar(event)"> IN-EAR</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="OverEar(event)"> OVER-EAR</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="Wired(event)">WIRED</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="Speakers(event)">SPEAKERS</li>
+                    </a>
 
                 </ul>
-        </nav>
+            </li>
 
-        <div class="signin">
-                <h1>LOGIN</h1>
-                <form onsubmit="signup(event)" action="" id="myform">
-                        <label for="">Email</label>
-                        <input type="email" name="" id="email">
-                        <label for="">Password</label>
-                        <input type="password" name="" id="password">
-                        <input type="submit" id ="signin"value="SignIn"/>
-                        <a href="signUp.html">Create Account</a>
-                        
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Warranty Registration</a></li>
+            <li><a href="#">#GetSetBoult</a></li>
+            <li class="btn">
+                <a href=""> <img src="https://cdn-icons-png.flaticon.com/128/266/266134.png" alt=""></a>
+                </i>
+            </li>
 
-                </form>
-        </div>
+
+
+        </ul>
+    </nav>
+
+    <div class="signin">
+        <h1>LOGIN</h1>
+        <form onsubmit="signup(event)" action="" id="myform">
+            <label for="">Email</label>
+            <input type="email" name="" id="email">
+            <label for="">Password</label>
+            <input type="password" name="" id="password">
+            <input type="submit" id="signin" value="SignIn" />
+            <a href="signUp.html">Create Account</a>
+
+
+        </form>
+    </div>
 </body>
 
-</html>
+</html><script>
+        function signin(e) {
+
+                e.preventDefault();
+                // let name = myform.name.value;
+                let email = myform.email.value;
+                let password = myform.password.value;
+
+
+                console.log("data", email, password);
+                let all_users = JSON.parse(localStorage.getItem("users"));
+
+                all_users.forEach(function (user) {
+                        if (email === user.email && password === user.password) {
+                                alert("Logged in succesfully")
+                        }
+                });
+
+
+
+        }
+</script>
