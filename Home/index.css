@@ -1,0 +1,40 @@
+
+
+/* sliding bar css start here */
+#mySlideshow {
+        /* height: 50vh; */
+        width: 100%;
+}
+
+#mySlideshow img {
+        /* width: 100%; */
+        height: 100vh;
+        overflow-y: hidden;
+        transition: right 10s;
+}
+
+
+/* product css */
+#Product_categories h1{
+        margin: auto;
+        text-align: center;
+        font-family: "Avenir Next", sans-serif;
+}
+
+/* product css start here */
+#Product_data {
+        margin: auto;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-gap: 5%;
+}
+
+#Product_data img {
+        width: 80%;
+}
+
+#Product_data div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}

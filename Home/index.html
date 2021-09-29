@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="header.css">
+        <style>
+              
+        </style>
+</head>
+
+<body>
+        <nav>
+                <a href="index.html">
+                        <img src="https://cdn.shopify.com/s/files/1/0378/5968/8492/files/BOULT-Audio_White-text_100x.png?v=1599473770"
+                                alt="logo">
+                </a>
+                <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Product</a>
+                                <ul>
+                                        <a href="#">
+                                                <li onclick="TrueWireless(event)"> TRUE WIRELESS</li>
+                                        </a>
+                                        <a href="#">
+                                                <li onclick="InEar(event)"> IN-EAR</li>
+                                        </a>
+                                        <a href="#">
+                                                <li onclick="OverEar(event)"> OVER-EAR</li>
+                                        </a>
+                                        <a href="#">
+                                                <li onclick="Wired(event)">WIRED</li>
+                                        </a>
+                                        <a href="#">
+                                                <li onclick="Speakers(event)">SPEAKERS</li>
+                                        </a>
+
+                                </ul>
+                        </li>
+
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Warranty Registration</a></li>
+                        <li><a href="#">#GetSetBoult</a></li>
+                        <li class="btn">  <a href=""> <img src="https://cdn-icons-png.flaticon.com/128/266/266134.png" alt=""></a></i></li>
+
+
+                      
+                </ul>
+        </nav>
+
+        <div id="mySlideshow"></div>
+        <div id="Product_categories">
+                <h1>Product Categories</h1>
+                <div>
+                        <a href=""><img src="https://cdn.shopify.com/s/files/1/0378/5968/8492/files/c4_360x.jpg?v=1592409789" alt="">
+                        <h2>In-Ear</h2></a>
+                        <a href=""><img src="" alt=""></a>
+                        <a href=""><img src="" alt=""></a>
+                        <a href=""><img src="" alt=""></a>
+                </div>
+        </div>
+        <div id="Product_data"></div>
+</body>
+
+</html>
+<script src="index.js"></script>
+<script>
+        let images = [
+                "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/Freedom-Desktop_1944x.png?v=1622647613",
+                "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/HomeBanner-FX1_1944x.png?v=1620414395",
+                "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/Kriti_1944x.png?v=1602509772"
+        ];
+
+
+        let container = document.getElementById("mySlideshow");
+        function mySlideshow() {
+                let img = document.createElement("img");
+                        img.src = images[0];
+                        container.append(img);
+
+                let counter = 1;
+                setInterval(function () {
+
+                        container.innerHTML = null
+                        if (counter === images.length) {
+                                counter = 0
+                                // setTimeout();
+                        }
+                        let img = document.createElement("img");
+                        img.src = images[counter];
+                        container.append(img);
+                        counter++;
+                }, 5000);
+
+        }
+        mySlideshow()
+
+
+
+        const detergents = [
+                {
+                        name: "Nirma",
+                        price: "10",
+                        image: "Images/1_9f55897e-3e6a-4ae1-a493-9fdcceaad040_1_750x.jpg",
+                },
+
+                {
+                        name: "Surf excel",
+                        price: "20",
+                        image: "https://m.media-amazon.com/images/I/61rDJVoKpeL._SL1000_.jpg",
+                },
+                {
+                        name: "Tide",
+                        price: "30",
+                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Tide_logo.svg/1200px-Tide_logo.svg.png",
+                },
+                {
+                        name: "wheel",
+                        price: "60",
+                        image: "https://5.imimg.com/data5/QV/MX/MY-8609988/wheel-powder-500x500.jpg",
+                },
+                {
+                        name: "ghadi",
+                        price: "40",
+                        image: "https://m.media-amazon.com/images/I/61SZYb3O-wL._SL1399_.jpg",
+                },
+                {
+                        name: "ariel",
+                        price: "50",
+                        image: "https://5.imimg.com/data5/HE/VA/SO/SELLER-46615966/111-500x500.jpg",
+                },
+        ];
+
+        // covert to JSON
+        const detergents_json = JSON.stringify(detergents);
+
+        //store above data local stoarge
+
+        localStorage.setItem("myDetergents", detergents_json);
+
+
+        // display on webpage
+        let myDetergents = localStorage.getItem('myDetergents');
+
+
+        // convert into operatable format
+        myDetergents = JSON.parse(myDetergents);
+
+
+        function showProducts() {
+                let data_div = document.getElementById("Product_data");
+
+                myDetergents.forEach(function (product) {
+                        let div = document.createElement("div");
+
+                        let p_name = document.createElement("p");
+                        p_name.innerText = product.name;
+
+                        let p_price = document.createElement("p");
+                        p_price.innerText = product.price;
+
+                        let image = document.createElement("img");
+                        image.src = product.image;
+
+                        let btn = document.createElement("button");
+                        btn.innerText = "Add to Cart";
+
+
+                        btn.onclick = function () {
+                                addtocart(product);
+                        };
+
+                        div.append(image, p_name, p_price, btn);
+                        data_div.append(div);
+
+                });
+        }
+
+        //show product
+        showProducts();
+        if (localStorage.getItem("cart") === null) {
+                localStorage.setItem("cart", JSON.stringify([]));
+        }
+
+        function addtocart(p) {
+
+
+                let cart_data = JSON.parse(localStorage.getItem("cart"));
+
+                cart_data.push(p);
+
+                localStorage.setItem("cart", JSON.stringify(cart_data));
+
+        }
+</script>
