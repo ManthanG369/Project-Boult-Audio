@@ -1,0 +1,82 @@
+* {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+}
+
+nav {
+        width: 100%;
+        position: fixed;
+        height: 80px;
+        background-color:rgba(0,0,0,0.3);
+        font-family: "Avenir Next", sans-serif;
+}
+
+nav img {
+        height: 70px;
+        position: absolute;
+        top: 17px;
+        left: 12%;
+}
+
+nav ul {
+        float: right;
+        margin-right: 25px;
+        margin-top: 15px;
+}
+
+nav ul li {
+        display: inline-block;
+        line-height: 50px;
+        margin: 0 30px;
+}
+
+nav ul li a {
+        position: relative;
+        color: white;
+        font-size: 20px;
+}
+
+nav ul ul {
+        display: none;
+}
+
+nav ul li:hover>ul {
+        position: absolute;
+        background-color: whitesmoke;
+        opacity: 100%;
+        display: block;
+
+}
+
+
+nav ul ul li {
+        position: relative;
+        margin: 0px;
+        width: 14vw;
+        color: black;
+        font-weight: 100;
+        float: none;
+        display: list-item;
+}
+
+nav ul li:nth-child(5) a {
+        color: #48C5D6;
+}
+
+
+/* Style buttons */
+.btn {
+  background-color: white; /* Blue background */
+  border: none; /* Remove borders */
+  color: black; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: white;
+}
