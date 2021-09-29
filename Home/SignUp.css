@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Avenir Next", sans-serif;
+}
+
+.SignUp {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 100px;
+    margin: auto;
+    padding: 3vh 5vh;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #A29E9E;
+}
+
+.SignUp form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5vh;
+}
+
+.SignUp h2 {
+    text-align: center;
+    margin: 10px;
+}
+
+#SignUpBtn {
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 14px 22px;
+    margin: 10px;
+    width: auto;
+    min-width: 90px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    color: #fff;
+    background: #ff6d6d;
+}
+
+input {
+    background-color: transparent;
+    list-style: none;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.025em;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}

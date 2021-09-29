@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        input {
+            margin-top: 8%;
+        }
+    </style>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="SignUp.css">
 </head>
+
 <body>
-        ksdnfkashdfaf
+    <nav>
+        <a href="index.html">
+            <img src="https://cdn.shopify.com/s/files/1/0378/5968/8492/files/BOULT-Audio_White-text_100x.png?v=1599473770" alt="logo">
+        </a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Product</a>
+                <ul>
+                    <a href="#">
+                        <li onclick="TrueWireless(event)"> TRUE WIRELESS</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="InEar(event)"> IN-EAR</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="OverEar(event)"> OVER-EAR</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="Wired(event)">WIRED</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="Speakers(event)">SPEAKERS</li>
+                    </a>
+
+                </ul>
+            </li>
+
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Warranty Registration</a></li>
+            <li><a href="#">#GetSetBoult</a></li>
+            <li class="btn">
+                <a href=""> <img src="https://cdn-icons-png.flaticon.com/128/266/266134.png" alt=""></a>
+                </i>
+            </li>
+
+
+
+        </ul>
+    </nav>
+
+    <div class="SignUp">
+        <h2>CREATE ACCOUNT</h2>
+        <form onsubmit="signup(event)" action="" id="myform">
+            <label for="">First Name</label>
+            <input type="text" id="F_name">
+            <label for="">Last Name</label>
+            <input type="text" id="L_name">
+            <label for="number">Mobile Number</label>
+            <input type="tel" name="" id="Mobile">
+            <label for="">Email</label>
+            <input type="email" name="" id="email">
+            <label for="">Password</label>
+            <input type="password" name="" id="password">
+            <input id="SignUpBtn" type="submit" value="create" />
+        </form>
+    </div>
+
 </body>
+
 </html>
+<script>
+    function signup(e) {
+        e.preventDefault();
+        let myform = document.getElementById("myform");
+
+        let F_name = myform.F_name.value;
+        let L_name = myform.L_name.value;
+        let Mobile = myform.Mobile.value;
+        let email = myform.email.value;
+        let password = myform.password.value;
+        console.log("data", name, email, password);
+
+
+        if (localStorage.getItem("users") === null) {
+            localStorage.setItem("users", JSON.stringify([]));
+        } else {
+            localStorage.setItem("users", JSON.stringify(user))
+        }
+
+        let user = {
+            F_name: name,
+            email: email,
+            password: password
+        };
+        // console.log('user:', user)
+
+        //get array from localstorage
+
+        let arr = JSON.parse(localStorage.getItem("users")); // existing users
+
+    }
+    //2.push new user to array
+    arr.push(user);
+
+    localStorage.setItem("users", JSON.stringify(arr));
+</script>
