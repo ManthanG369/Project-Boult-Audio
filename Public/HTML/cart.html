@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..\css\header.css">
+    <link rel="stylesheet" href="..\css\cart.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="..\HTML\index.html">
+            <img id="BoultAudio_logo" src="https://cdn.shopify.com/s/files/1/0378/5968/8492/files/BOULT-Audio_White-text_100x.png?v=1599473770" alt="logo">
+        </a>
+        <ul>
+            <li><a href="..\HTML\index.html">Home</a></li>
+            <li><a href="#">Product</a>
+                <ul>
+                    <a href="#">
+                        <li onclick="TrueWireless(event)"> TRUE WIRELESS</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="InEar(event)"> IN-EAR</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="OverEar(event)"> OVER-EAR</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="Wired(event)">WIRED</li>
+                    </a>
+                    <a href="#">
+                        <li onclick="Speakers(event)">SPEAKERS</li>
+                    </a>
+
+                </ul>
+            </li>
+
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Warranty Registration</a></li>
+            <li><a href="#">#GetSetBoult</a></li>
+            <li class="user">
+                <a href="..\HTML\SignIn.html"> <img id="user_icon" src="..\imges\user.png" alt=""></a>
+                </i>
+            </li>
+            <li class="shopping-cart">
+                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="../imges\shopping-cart.png" alt="">
+                    <span id="shopping-cart-count">0</span></a>
+                </i>
+
+            </li>
+
+
+
+        </ul>
+    </nav>
+
+
+    <div id="data"></div>
+    <h1>My cart</h1>
+    <h1 id="total">Total</h1>
+    <button onclick="makePayment ()">Make Payment</button>
+</body>
+
+</html>
+<script>
+    // getting cart data , showing cart data
+
+    let cart_data = JSON.parse(localStorage.getItem("cart"));
+    console.log('cart_data:', cart_data)
+    console.log('cart_data:', cart_data.name)
+
+    //     console.log("product.name", product.name)
+    let data_div = document.getElementById("data");
+    var total = 0;
+
+    cart_data.forEach(function(product) {
+        let div = document.createElement("div");
+
+        let p_name = document.createElement("p");
+        p_name.innerText = product.name;
+
+        let p_price = document.createElement("p");
+        p_price.innerText = product.price;
+
+        let image = document.createElement("img");
+        image.src = product.image;
+
+
+        div.append(image, p_name, p_price);
+        data_div.append(div);
+
+        total = total + Number(product.price);
+    });
+
+    let total_h1 = document.getElementById("total");
+
+    total_h1.innerText = `Total price - ${total}`;
+
+    function makePayment() {
+
+        setTimeout(function() {
+            alert("Payment Successful");
+        }, 4000);
+    }
+</script>

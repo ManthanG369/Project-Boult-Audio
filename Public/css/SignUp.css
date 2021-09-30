@@ -15,6 +15,7 @@
     border-radius: 20px;
     box-sizing: border-box;
     background-color: #A29E9E;
+    z-index: -1;
 }
 
 .SignUp form {

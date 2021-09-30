@@ -3,33 +3,35 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    font-family: "Avenir Next", sans-serif;
 }
 
 nav {
     width: 100%;
     position: fixed;
     height: 80px;
+    top: 0;
     background-color: rgba(0, 0, 0, 0.3);
     font-family: "Avenir Next", sans-serif;
 }
 
-nav img {
+#BoultAudio_logo {
     height: 70px;
     position: absolute;
-    /* top: 1px; */
-    left: 12%;
+    left: 8%;
 }
 
 nav ul {
     float: right;
-    margin-right: 25px;
-    margin-top: 15px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-right: 40px;
 }
 
 nav ul li {
-    display: inline-block;
-    line-height: 50px;
-    margin: 0 30px;
+    line-height: 55px;
 }
 
 nav ul li a {
@@ -40,6 +42,7 @@ nav ul li a {
 
 nav ul ul {
     display: none;
+    width: max-content;
 }
 
 nav ul li:hover>ul {
@@ -67,24 +70,35 @@ nav ul li:nth-child(5) a {
 
 /* Style buttons */
 
-.btn {
-    background-color: white;
-    /* Blue background */
-    border: none;
-    /* Remove borders */
-    color: black;
-    /* White text */
-    padding: 12px 16px;
-    /* Some padding */
-    font-size: 16px;
-    /* Set a font size */
-    cursor: pointer;
-    /* Mouse pointer on hover */
-}
-
 
 /* Darker background on mouse-over */
 
 .btn:hover {
     background-color: white;
+}
+
+#user_icon {
+    height: 35px;
+    vertical-align: middle;
+}
+
+#shopping-cart {
+    height: 35px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.shopping-cart {
+    /* border: 1px solid red; */
+    background-color: #1AB9CD;
+    width: 5vw;
+    border-radius: 50%;
+}
+
+#shopping-cart-count {
+    background-color: white;
+    color: #128bc4;
+    font-weight: 700;
+    border-radius: 40%;
+    vertical-align: middle;
 }
