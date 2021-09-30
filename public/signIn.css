@@ -10,6 +10,7 @@
     flex-direction: column;
     position: relative;
     top: 100px;
+    z-index: -1;
     margin: auto;
     padding: 3vh 5vh;
     border-radius: 10px;

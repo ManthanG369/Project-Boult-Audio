@@ -84,7 +84,7 @@ let myproduct = localStorage.getItem('myproduct');
 myproduct = JSON.parse(myproduct);
 
 
-function showProducts(product) {
+function showProducts() {
     let data_div = document.getElementById("Product_data");
 
     myproduct.forEach(function(product) {
@@ -92,6 +92,7 @@ function showProducts(product) {
 
         let p_name = document.createElement("h3");
         p_name.innerText = product.name;
+        // console.log('p_name.innerText:', p_name.innerText)
 
         let price_div = document.createElement("span");
 
@@ -109,8 +110,11 @@ function showProducts(product) {
         let btn = document.createElement("button");
         btn.innerText = "Add to Cart";
 
-        div.onclick = function() {
-            Clicked_Product(product);
+        // div.onclick = function() {
+        //     Clicked_Product(product);
+        // };
+        btn.onclick = function() {
+            addtocart(product);
         };
         price_div.append(O_price, p_price)
         div.append(image, p_name, price_div, btn);
@@ -120,7 +124,7 @@ function showProducts(product) {
 }
 
 //show product
-showProducts(product);
+showProducts();
 
 //clicked product
 if (localStorage.getItem("ClickedProduct") === null) {
@@ -132,4 +136,24 @@ function Clicked_Product(p) {
     cart_data[0] = p;
     localStorage.setItem("ClickedProduct", JSON.stringify(cart_data));
     window.location = "ProductDiscription.html"
+}
+
+if (localStorage.getItem("cart") === null) {
+    localStorage.setItem("cart", JSON.stringify([]));
+}
+
+function addtocart(p) {
+    // alert("yes")
+    let cart_data = JSON.parse(localStorage.getItem("cart"));
+
+    cart_data.push(p);
+
+    localStorage.setItem("cart", JSON.stringify(cart_data));
+    let cart_len = cart_data.length
+    console.log('cart_len:', cart_len)
+    updateCart(cart_len)
+}
+
+function updateCart(cart_len) {
+    document.getElementById("shopping-cart-count").innerText = cart_len
 }
