@@ -59,10 +59,8 @@
     <div class="SignUp">
         <h2>CREATE ACCOUNT</h2>
         <form onsubmit="signup(event)" action="" id="myform">
-            <label for="">First Name</label>
+            <label for="">Name</label>
             <input type="text" id="F_name">
-            <label for="">Last Name</label>
-            <input type="text" id="L_name">
             <label for="number">Mobile Number</label>
             <input type="tel" name="" id="Mobile">
             <label for="">Email</label>
@@ -77,38 +75,44 @@
 
 </html>
 <script>
+    if (localStorage.getItem("Users") === null) {
+        localStorage.setItem("Users", JSON.stringify([]));
+    }
+
     function signup(e) {
         e.preventDefault();
         let myform = document.getElementById("myform");
 
         let F_name = myform.F_name.value;
-        let L_name = myform.L_name.value;
         let Mobile = myform.Mobile.value;
         let email = myform.email.value;
         let password = myform.password.value;
-        console.log("data", name, email, password);
 
-
-        if (localStorage.getItem("users") === null) {
-            localStorage.setItem("users", JSON.stringify([]));
-        } else {
-            localStorage.setItem("users", JSON.stringify(user))
-        }
 
         let user = {
-            F_name: name,
+            name: F_name,
             email: email,
-            password: password
+            password: password,
+            Mycart: []
         };
-        // console.log('user:', user)
 
+        if (localStorage.getItem("Users") === null) {
+            localStorage.setItem("Users", JSON.stringify([]));
+        }
         //get array from localstorage
+        let arr = JSON.parse(localStorage.getItem("Users")); // existing users
 
-        let arr = JSON.parse(localStorage.getItem("users")); // existing users
+        arr.push(user);
 
+        localStorage.setItem("Users", JSON.stringify(arr));
+        SignUpSucces(myform);
     }
-    //2.push new user to array
-    arr.push(user);
 
-    localStorage.setItem("users", JSON.stringify(arr));
+    function SignUpSucces(myform) {
+        alert("SignUpsuccessful")
+        let data = document.getElementsByClassName("SignUp")
+        data.remove()
+            // window.location = "Product.html";
+            // window.location = "index.html";
+    }
 </script>
