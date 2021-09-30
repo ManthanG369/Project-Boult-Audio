@@ -138,9 +138,9 @@ function Clicked_Product(p) {
     window.location = "ProductDiscription.html"
 }
 
-if (localStorage.getItem("cart") === null) {
-    localStorage.setItem("cart", JSON.stringify([]));
-}
+// if (localStorage.getItem("cart") === null) {
+//     localStorage.setItem("cart", JSON.stringify([]));
+// }
 
 // function addtocart(p) {
 //     // alert("yes")

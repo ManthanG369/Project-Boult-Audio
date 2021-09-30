@@ -110,6 +110,7 @@
 
     function addtocart(p) {
         let Mycart_data = JSON.parse(localStorage.getItem("Mycart"));
+        console.log('Mycart_data:', Mycart_data)
 
         Mycart_data.push(p);
 
