@@ -5,14 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
-    <style>
-        input {
-            margin-top: 8%;
-        }
-    </style>
+    <title>SignIn</title>
     <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="SignUp.css">
+    <link rel="stylesheet" href="signIn.css">
 </head>
 
 <body>
@@ -56,20 +51,16 @@
         </ul>
     </nav>
 
-    <div class="SignUp">
-        <h2>CREATE ACCOUNT</h2>
-        <form onsubmit="signup(event)" action="" id="myform">
-            <label for="">First Name</label>
-            <input type="text" id="F_name">
-            <label for="">Last Name</label>
-            <input type="text" id="L_name">
-            <label for="number">Mobile Number</label>
-            <input type="tel" name="" id="Mobile">
+
+    <div class="signin">
+        <form onsubmit="SignIn (event)" action="" id="myform">
+            <h1>LOGIN</h1>
             <label for="">Email</label>
             <input type="email" name="" id="email">
             <label for="">Password</label>
             <input type="password" name="" id="password">
-            <input id="SignUpBtn" type="submit" value="create" />
+            <input type="submit" id="signin" value="SignIn" />
+            <a href="signUp.html">Create Account</a>
         </form>
     </div>
 
@@ -77,38 +68,39 @@
 
 </html>
 <script>
-    function signup(e) {
+    function SignIn(e) {
         e.preventDefault();
-        let myform = document.getElementById("myform");
-
-        let F_name = myform.F_name.value;
-        let L_name = myform.L_name.value;
-        let Mobile = myform.Mobile.value;
+        console.log("y");
+        let myform = document.getElementById("myform")
         let email = myform.email.value;
         let password = myform.password.value;
-        console.log("data", name, email, password);
 
 
-        if (localStorage.getItem("users") === null) {
-            localStorage.setItem("users", JSON.stringify([]));
-        } else {
-            localStorage.setItem("users", JSON.stringify(user))
-        }
+        console.log("data", email, password);
+        let all_users = JSON.parse(localStorage.getItem("Users"));
+        console.log('all_users:', all_users)
 
-        let user = {
-            F_name: name,
-            email: email,
-            password: password
-        };
-        // console.log('user:', user)
+        flag = false
+        let myuser = [];
+        all_users.forEach(function(Users) {
+            if (email === Users.email) {
+                // alert("successful ")
+                // flag = true
+                myuser = Users
+            }
+        });
+        console.log('myuser:', myuser)
 
-        //get array from localstorage
+        myuser.forEach(function() {
+            if (email === myuser.email && password === myuser.password) {
+                alert("successful")
+            }
+        });
 
-        let arr = JSON.parse(localStorage.getItem("users")); // existing users
+        // if (flag === false) {
+        //     alert("Please Enter correct Email And Passw ")
+        // }
+
 
     }
-    //2.push new user to array
-    arr.push(user);
-
-    localStorage.setItem("users", JSON.stringify(arr));
 </script>
