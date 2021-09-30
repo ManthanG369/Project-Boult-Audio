@@ -46,7 +46,7 @@
                 </i>
             </li>
             <li class="shopping-cart">
-                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="../imges\shopping-cart.png" alt="">
+                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="..\imges\ShoppingCart.png" alt="">
                     <span id="shopping-cart-count">0</span></a>
                 </i>
 
@@ -108,5 +108,12 @@
         // }
 
 
+    }
+    updateCart()
+
+    function updateCart() {
+        let cart_data = JSON.parse(localStorage.getItem("Mycart"));
+        let cart_len = cart_data.length
+        document.getElementById("shopping-cart-count").innerText = cart_len
     }
 </script>

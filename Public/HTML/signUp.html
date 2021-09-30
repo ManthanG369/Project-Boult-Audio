@@ -51,7 +51,7 @@
                 </i>
             </li>
             <li class="shopping-cart">
-                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="../imges\shopping-cart.png" alt="">
+                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="..\imges\ShoppingCart.png" alt="">
                     <span id="shopping-cart-count">0</span></a>
                 </i>
 
@@ -81,9 +81,20 @@
 
 </html>
 <script>
-    if (localStorage.getItem("Users") === null) {
-        localStorage.setItem("Users", JSON.stringify([]));
+    // updating cart value
+    updateCart()
+
+    function updateCart() {
+        let cart_data = JSON.parse(localStorage.getItem("Mycart"));
+        let cart_len = cart_data.length
+        document.getElementById("shopping-cart-count").innerText = cart_len
     }
+
+
+    // checking for user
+    // if (localStorage.getItem("Users") === null) {
+    //     localStorage.setItem("Users", JSON.stringify([]));
+    // }
 
     function signup(e) {
         e.preventDefault();

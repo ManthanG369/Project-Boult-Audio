@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="header.css">
-    <script src="Product_Discription.js"></script>
-    <!-- <script src="index.js"></script> -->
+    <link rel="stylesheet" href="..\css\header.css">
+    <link rel="stylesheet" href="..\css\cart.css">
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -47,7 +49,7 @@
                 </i>
             </li>
             <li class="shopping-cart">
-                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="../imges\shopping-cart.png" alt="">
+                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="..\imges\ShoppingCart.png" alt="">
                     <span id="shopping-cart-count">0</span></a>
                 </i>
 
@@ -58,7 +60,66 @@
         </ul>
     </nav>
 
-    <div id="productDiscription"></div>
+
+    <div id="data"></div>
+    <!-- <h1>My cart</h1>
+    <h1 id="total">Total</h1>
+    <button onclick="makePayment ()">Make Payment</button> -->
 </body>
 
 </html>
+<script>
+    // getting cart data , showing cart data
+
+    let cart_data = JSON.parse(localStorage.getItem("ClickedProduct"));
+    console.log('cart_data:', cart_data)
+
+
+    //     console.log("product.name", product.name)
+    let data_div = document.getElementById("data");
+    var total = 0;
+
+    cart_data.forEach(function(product) {
+        let div = document.createElement("div");
+
+        let p_name = document.createElement("p");
+        p_name.innerText = product.name;
+
+        let p_price = document.createElement("p");
+        p_price.innerText = product.price;
+
+        let image = document.createElement("img");
+        image.src = product.image;
+
+        let btn = document.createElement("button");
+        btn.innerText = "Add to Cart";
+        btn.onclick = function() {
+            addtocart(product);
+        };
+
+        div.append(image, p_name, p_price, btn);
+        data_div.append(div);
+
+    });
+
+
+
+    if (localStorage.getItem("Mycart") === null) {
+        localStorage.setItem("Mycart", JSON.stringify([]));
+    }
+
+    function addtocart(p) {
+        let Mycart_data = JSON.parse(localStorage.getItem("Mycart"));
+
+        Mycart_data.push(p);
+
+        localStorage.setItem("Mycart", JSON.stringify(Mycart_data));
+        let cart_len = Mycart_data.length
+        updateCart(cart_len)
+    }
+
+    //updating cart data
+    function updateCart(cart_len) {
+        document.getElementById("shopping-cart-count").innerText = cart_len
+    }
+</script>

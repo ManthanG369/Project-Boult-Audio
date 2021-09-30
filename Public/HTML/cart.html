@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
     <link rel="stylesheet" href="..\css\header.css">
     <link rel="stylesheet" href="..\css\cart.css">
-    <style>
 
-    </style>
 </head>
 
+
 <body>
+
     <nav>
         <a href="..\HTML\index.html">
             <img id="BoultAudio_logo" src="https://cdn.shopify.com/s/files/1/0378/5968/8492/files/BOULT-Audio_White-text_100x.png?v=1599473770" alt="logo">
@@ -49,7 +50,7 @@
                 </i>
             </li>
             <li class="shopping-cart">
-                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="../imges\shopping-cart.png" alt="">
+                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="..\imges\ShoppingCart.png" alt="">
                     <span id="shopping-cart-count">0</span></a>
                 </i>
 
@@ -68,44 +69,4 @@
 </body>
 
 </html>
-<script>
-    // getting cart data , showing cart data
-
-    let cart_data = JSON.parse(localStorage.getItem("cart"));
-    console.log('cart_data:', cart_data)
-    console.log('cart_data:', cart_data.name)
-
-    //     console.log("product.name", product.name)
-    let data_div = document.getElementById("data");
-    var total = 0;
-
-    cart_data.forEach(function(product) {
-        let div = document.createElement("div");
-
-        let p_name = document.createElement("p");
-        p_name.innerText = product.name;
-
-        let p_price = document.createElement("p");
-        p_price.innerText = product.price;
-
-        let image = document.createElement("img");
-        image.src = product.image;
-
-
-        div.append(image, p_name, p_price);
-        data_div.append(div);
-
-        total = total + Number(product.price);
-    });
-
-    let total_h1 = document.getElementById("total");
-
-    total_h1.innerText = `Total price - ${total}`;
-
-    function makePayment() {
-
-        setTimeout(function() {
-            alert("Payment Successful");
-        }, 4000);
-    }
-</script>
+<script src="..\Javascript\cart.js"></script>
