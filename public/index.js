@@ -131,5 +131,5 @@ function Clicked_Product(p) {
     let cart_data = JSON.parse(localStorage.getItem("ClickedProduct"));
     cart_data[0] = p;
     localStorage.setItem("ClickedProduct", JSON.stringify(cart_data));
-
+    window.location = "ProductDiscription.html"
 }
