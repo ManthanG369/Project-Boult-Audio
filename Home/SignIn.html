@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signin</title>
+    <title>SignIn</title>
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="signIn.css">
 </head>
@@ -51,40 +51,56 @@
         </ul>
     </nav>
 
+
     <div class="signin">
-        <h1>LOGIN</h1>
-        <form onsubmit="signup(event)" action="" id="myform">
+        <form onsubmit="SignIn (event)" action="" id="myform">
+            <h1>LOGIN</h1>
             <label for="">Email</label>
             <input type="email" name="" id="email">
             <label for="">Password</label>
             <input type="password" name="" id="password">
             <input type="submit" id="signin" value="SignIn" />
             <a href="signUp.html">Create Account</a>
-
-
         </form>
     </div>
+
 </body>
 
-</html><script>
-        function signin(e) {
-
-                e.preventDefault();
-                // let name = myform.name.value;
-                let email = myform.email.value;
-                let password = myform.password.value;
-
-
-                console.log("data", email, password);
-                let all_users = JSON.parse(localStorage.getItem("users"));
-
-                all_users.forEach(function (user) {
-                        if (email === user.email && password === user.password) {
-                                alert("Logged in succesfully")
-                        }
-                });
+</html>
+<script>
+    function SignIn(e) {
+        e.preventDefault();
+        console.log("y");
+        let myform = document.getElementById("myform")
+        let email = myform.email.value;
+        let password = myform.password.value;
 
 
+        console.log("data", email, password);
+        let all_users = JSON.parse(localStorage.getItem("Users"));
+        console.log('all_users:', all_users)
 
-        }
+        flag = false
+        let myuser = [];
+        all_users.forEach(function(Users) {
+            if (email === Users.email) {
+                // alert("successful ")
+                // flag = true
+                myuser = Users
+            }
+        });
+        console.log('myuser:', myuser)
+
+        myuser.forEach(function() {
+            if (email === myuser.email && password === myuser.password) {
+                alert("successful")
+            }
+        });
+
+        // if (flag === false) {
+        //     alert("Please Enter correct Email And Passw ")
+        // }
+
+
+    }
 </script>
