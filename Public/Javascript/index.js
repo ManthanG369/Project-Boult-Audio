@@ -39,30 +39,35 @@ const product = [{
         OriginalPrice: "4999.00",
         price: "1299.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/24_1_copy_750x.jpg?v=1632483864",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
     {
         name: "AirBass FX1",
         OriginalPrice: "4999.00",
         price: "1499.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/FX1Black1copy_750x.jpg?v=1632289965",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
     {
         name: "AirBass ProPods",
         OriginalPrice: "7999.00",
         price: "1299.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/Black5_bc2c75ae-e14b-48b8-9202-64d8d514893c_750x.jpg?v=1601558066",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
     {
         name: "AirBass Combuds",
         OriginalPrice: "4999.00",
         price: "1299.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/Thumbnail_ecae2ec7-e53d-4dab-ac91-18f1ea9d592d_750x.jpg?v=1604387067",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
     {
         name: "AirBass Q10",
         OriginalPrice: "4999.00",
         price: "1299.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/1copy_750x.jpg?v=1632294030",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
 
 

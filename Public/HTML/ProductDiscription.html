@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="..\css\header.css">
-    <link rel="stylesheet" href="..\css\cart.css">
+    <!-- <link rel="stylesheet" href="..\css\cart.css"> -->
+    <link rel="stylesheet" href="..\css\Product_Discription.css">
     <style>
 
     </style>
@@ -61,10 +62,11 @@
     </nav>
 
 
-    <div id="data"></div>
-    <!-- <h1>My cart</h1>
-    <h1 id="total">Total</h1>
-    <button onclick="makePayment ()">Make Payment</button> -->
+    <div id="Product_Discription">
+
+
+    </div>
+
 </body>
 
 </html>
@@ -76,29 +78,49 @@
 
 
     //     console.log("product.name", product.name)
-    let data_div = document.getElementById("data");
+    let data_div = document.getElementById("Product_Discription");
     var total = 0;
 
     cart_data.forEach(function(product) {
-        let div = document.createElement("div");
-
-        let p_name = document.createElement("p");
-        p_name.innerText = product.name;
-
-        let p_price = document.createElement("p");
-        p_price.innerText = product.price;
-
+        let IMGdiv = document.createElement("div");
         let image = document.createElement("img");
         image.src = product.image;
 
+        let Contentdiv = document.createElement("div");
+
+        let p_name = document.createElement("h3");
+        p_name.innerText = product.name;
+
+        let price_div = document.createElement("span");
+
+        let O_price = document.createElement("h4");
+        O_price.innerText = "₹" + product.OriginalPrice;
+
+        let p_price = document.createElement("h4");
+        p_price.innerText = "₹" + product.price;
+
         let btn = document.createElement("button");
         btn.innerText = "Add to Cart";
+
+
+        let Description = document.createElement("p");
+        p_price.innerText = "Description";
+
+        let DescriptionP = document.createElement("p");
+        p_price.innerText = product.discription;
+
         btn.onclick = function() {
             addtocart(product);
         };
 
-        div.append(image, p_name, p_price, btn);
-        data_div.append(div);
+        IMGdiv.append(image);
+
+        price_div.append(O_price, p_price);
+
+
+        Contentdiv.append(p_name, price_div, btn);
+
+        data_div.append(IMGdiv, Contentdiv);
 
     });
 

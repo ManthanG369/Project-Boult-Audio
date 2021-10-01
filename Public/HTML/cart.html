@@ -62,10 +62,25 @@
     </nav>
 
 
-    <div id="data"></div>
-    <h1>My cart</h1>
-    <h1 id="total">Total</h1>
-    <button onclick="makePayment ()">Make Payment</button>
+    <div id="Maindata">
+        <h1>CART</h1>
+        <div class="cont">
+            <p>PRICE</p>
+            <p>QUANTITY</p>
+            <p>TOTAL</p>
+        </div>
+        <hr>
+        <div id="data"></div>
+        <hr>
+    </div>
+
+    <div id="checkout">
+
+        <h1 id="total">Subtotal</h1>
+        <button onclick="makePayment ()">CHECK OUT</button>
+        <a href="..\HTML\index.html">Continue Shopping</a>
+    </div>
+
 </body>
 
 </html>

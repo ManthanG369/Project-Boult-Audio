@@ -1,19 +1,22 @@
  #Product_Discription {
      display: flex;
-     margin: 100px;
-     flex-direction: column;
+     margin: 150px 100px 100px 100px;
+     /* flex-direction: column; */
      border: 1px solid red;
+     text-align: center;
+     padding: 20px;
+     box-sizing: border-box;
  }
  
  #Product_Discription img {
-     width: 20%;
+     width: 80%;
  }
  
  #Product_Discription div {
      display: flex;
      margin: 10px;
      border: 1px solid red;
-     /* flex-direction: column; */
+     flex-direction: column;
      align-items: center;
      justify-content: space-between;
  }
