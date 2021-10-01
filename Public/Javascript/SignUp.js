@@ -49,3 +49,11 @@
            // window.location = "Product.html";
            // window.location = "index.html";
    }
+
+   updateCart()
+
+   function updateCart() {
+       let cart_data = JSON.parse(localStorage.getItem("Cart"));
+       let cart_len = cart_data.length
+       document.getElementById("shopping-cart-count").innerText = cart_len
+   }

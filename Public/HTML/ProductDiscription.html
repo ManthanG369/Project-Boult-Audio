@@ -162,6 +162,13 @@
 
 </html>
 <script>
+    updateCart()
+
+    function updateCart() {
+        let cart_data = JSON.parse(localStorage.getItem("Cart"));
+        let cart_len = cart_data.length
+        document.getElementById("shopping-cart-count").innerText = cart_len
+    }
     // getting cart data , showing cart data
 
     let cart_data = JSON.parse(localStorage.getItem("ClickedProduct"));
@@ -193,22 +200,25 @@
 
     function addtocart(p) {
 
-        alert("y")
-        let cart_data = JSON.parse(localStorage.getItem("Cart"));
-        console.log('cart_data:', cart_data)
-            // cart_data = [];
-        console.log('cart_data:', cart_data)
-
-        cart_data.push(obj);
-        console.log('cart_data:', cart_data)
-        localStorage.setItem("Cart", JSON.stringify(cart_data));
+        // alert("y")
+        let Cart_data = JSON.parse(localStorage.getItem("Cart"));
+        // console.log('cart_data:', Cart_data)
+        Cart_data = [];
+        let data = JSON.parse(localStorage.getItem("ClickedProduct"));
+        Cart_data.push(obj);
+        console.log('Cart_data:', Cart_data)
+        localStorage.setItem("Cart", JSON.stringify(Cart_data));
 
     }
 
 
 
     //updating cart data
-    function updateCart(cart_len) {
-        document.getElementById("shopping-cart-count ").innerText = cart_len
+    updateCart()
+
+    function updateCart() {
+        let cart_data = JSON.parse(localStorage.getItem("Cart"));
+        let cart_len = cart_data.length
+        document.getElementById("shopping-cart-count").innerText = cart_len
     }
 </script>
