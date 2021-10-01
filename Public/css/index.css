@@ -55,3 +55,8 @@
 #Product_data p {
     text-decoration: line-through;
 }
+
+#p_head {
+    margin: 10px auto;
+    text-align: center;
+}

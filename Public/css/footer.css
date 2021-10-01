@@ -1,0 +1,65 @@
+footer {
+    margin-top: 20px;
+    z-index: -10;
+    position: relative;
+    top: 20vh;
+    bottom: 0
+}
+
+.top {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#faq {
+    display: flex;
+}
+
+#faq li {
+    margin: 30px;
+    cursor: pointer;
+}
+
+.bottom svg {
+    width: 50px
+}
+
+#F_email {
+    width: 300px;
+    margin: 30px;
+}
+
+#F_email input {
+    margin: 20px 10px;
+    background-color: transparent;
+    list-style: none;
+    font-style: normal;
+    font-size: 17px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 90px;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+}
+
+.bottom ul {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bottom span {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom li {
+    justify-content: space-between;
+    margin: 10px;
+}

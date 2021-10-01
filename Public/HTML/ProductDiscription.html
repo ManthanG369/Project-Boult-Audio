@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="..\css\header.css">
     <!-- <link rel="stylesheet" href="..\css\cart.css"> -->
     <link rel="stylesheet" href="..\css\Product_Discription.css">
+    <link rel="stylesheet" href="..\css\footer.css">
     <style>
 
     </style>
@@ -63,10 +64,100 @@
 
 
     <div id="Product_Discription">
+        <div>
+            <img id="product_img" src=" " alt=" ">
+        </div>
 
 
+        <div id="cont">
+            <h1 id="Product_name"></h1>
+            <div id="Price_div">
+                <span id="O_price"></span>
+                <h2 id="price"> </h2>
+            </div>
+            <p>*Tax included</p>
+            <h5>Quantity
+            </h5>
+            <input type="num">
+            <button id="addtocart" onclick=" addtocart()">
+                Add To Cart
+            </button>
+
+            <h3>Description
+            </h3>
+            <p id="Description_p"></p>
+        </div>
     </div>
 
+
+    <!-- footer section -->
+    <footer>
+        <hr>
+        <div class="top">
+            <div id="faq">
+                <ul>
+                    <li>FAQ</li>
+                    <li>Terms & Conditions</li>
+                    <li>Bulk Order</li>
+                </ul>
+                <ul>
+                    <li>Data Privacy Policy</li>
+                    <li>E-Waste Management</li>
+                    <li>Social Responsibility</li>
+                </ul>
+            </div>
+
+            <div id="email">
+                <h1>Subcribe Us Us</h1>
+                <input type="text" placeholder="Enter your email">
+                <button>SUBMIT</button>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <ul class="Social_icon">
+
+                <li>
+                    <a target="_blank" href="https://www.instagram.com/boultaudio" title="Boult Audio on Instagram" class="js-no-transition">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-instagram" viewBox="0 0 32 32"><path fill="#444" d="M16 3.094c4.206 0 4.7.019 6.363.094 1.538.069 2.369.325 2.925.544.738.287 1.262.625 1.813 1.175s.894 1.075 1.175 1.813c.212.556.475 1.387.544 2.925.075 1.662.094 2.156.094 6.363s-.019 4.7-.094 6.363c-.069 1.538-.325 2.369-.544 2.925-.288.738-.625 1.262-1.175 1.813s-1.075.894-1.813 1.175c-.556.212-1.387.475-2.925.544-1.663.075-2.156.094-6.363.094s-4.7-.019-6.363-.094c-1.537-.069-2.369-.325-2.925-.544-.737-.288-1.263-.625-1.813-1.175s-.894-1.075-1.175-1.813c-.212-.556-.475-1.387-.544-2.925-.075-1.663-.094-2.156-.094-6.363s.019-4.7.094-6.363c.069-1.537.325-2.369.544-2.925.287-.737.625-1.263 1.175-1.813s1.075-.894 1.813-1.175c.556-.212 1.388-.475 2.925-.544 1.662-.081 2.156-.094 6.363-.094zm0-2.838c-4.275 0-4.813.019-6.494.094-1.675.075-2.819.344-3.819.731-1.037.4-1.913.944-2.788 1.819S1.486 4.656 1.08 5.688c-.387 1-.656 2.144-.731 3.825-.075 1.675-.094 2.213-.094 6.488s.019 4.813.094 6.494c.075 1.675.344 2.819.731 3.825.4 1.038.944 1.913 1.819 2.788s1.756 1.413 2.788 1.819c1 .387 2.144.656 3.825.731s2.213.094 6.494.094 4.813-.019 6.494-.094c1.675-.075 2.819-.344 3.825-.731 1.038-.4 1.913-.944 2.788-1.819s1.413-1.756 1.819-2.788c.387-1 .656-2.144.731-3.825s.094-2.212.094-6.494-.019-4.813-.094-6.494c-.075-1.675-.344-2.819-.731-3.825-.4-1.038-.944-1.913-1.819-2.788s-1.756-1.413-2.788-1.819c-1-.387-2.144-.656-3.825-.731C20.812.275 20.275.256 16 .256z"></path><path fill="#444" d="M16 7.912a8.088 8.088 0 0 0 0 16.175c4.463 0 8.087-3.625 8.087-8.088s-3.625-8.088-8.088-8.088zm0 13.338a5.25 5.25 0 1 1 0-10.5 5.25 5.25 0 1 1 0 10.5zM26.294 7.594a1.887 1.887 0 1 1-3.774.002 1.887 1.887 0 0 1 3.774-.003z"></path></svg>
+
+                    </a>
+                </li>
+
+
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/BoultAudio" title="Boult Audio on Facebook" class="js-no-transition">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-facebook" viewBox="0 0 32 32"><path fill="#444" d="M18.56 31.36V17.28h4.48l.64-5.12h-5.12v-3.2c0-1.28.64-2.56 2.56-2.56h2.56V1.28H19.2c-3.84 0-7.04 2.56-7.04 7.04v3.84H7.68v5.12h4.48v14.08h6.4z"></path></svg>
+
+                    </a>
+                </li>
+
+
+                <li>
+                    <a target="_blank" href="https://twitter.com/BoultAudio" title="Boult Audio on Twitter" class="js-no-transition">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-twitter" viewBox="0 0 32 32"><path fill="#444" d="M31.281 6.733q-1.304 1.924-3.13 3.26 0 .13.033.408t.033.408q0 2.543-.75 5.086t-2.282 4.858-3.635 4.108-5.053 2.869-6.341 1.076q-5.282 0-9.65-2.836.913.065 1.5.065 4.401 0 7.857-2.673-2.054-.033-3.668-1.255t-2.266-3.146q.554.13 1.206.13.88 0 1.663-.261-2.184-.456-3.619-2.184t-1.435-3.977v-.065q1.239.652 2.836.717-1.271-.848-2.021-2.233t-.75-2.983q0-1.63.815-3.195 2.38 2.967 5.754 4.678t7.319 1.907q-.228-.815-.228-1.434 0-2.608 1.858-4.45t4.532-1.842q1.304 0 2.51.522t2.054 1.467q2.152-.424 4.01-1.532-.685 2.217-2.771 3.488 1.989-.261 3.619-.978z"></path></svg>
+
+                    </a>
+                </li>
+
+
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCOCNHH7nJUMmfszksZVWRUQ" title="Boult Audio on YouTube" class="js-no-transition">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-youtube" viewBox="0 0 21 20"><path fill="#444" d="M-.196 15.803q0 1.23.812 2.092t1.977.861h14.946q1.165 0 1.977-.861t.812-2.092V3.909q0-1.23-.82-2.116T17.539.907H2.593q-1.148 0-1.969.886t-.82 2.116v11.894zm7.465-2.149V6.058q0-.115.066-.18.049-.016.082-.016l.082.016 7.153 3.806q.066.066.066.164 0 .066-.066.131l-7.153 3.806q-.033.033-.066.033-.066 0-.098-.033-.066-.066-.066-.131z"></path></svg>
+
+                    </a>
+                </li>
+
+
+            </ul>
+
+
+            <span><a href="https://www.boultaudio.com/pages/sitemap"></a>&nbsp;
+            © 2021 Boult Audi0
+              All Rights Reserved
+          </span>
+        </div>
+    </footer>
 </body>
 
 </html>
@@ -74,75 +165,50 @@
     // getting cart data , showing cart data
 
     let cart_data = JSON.parse(localStorage.getItem("ClickedProduct"));
-    console.log('cart_data:', cart_data)
+    // console.log('cart_data:', cart_data)
+
+    let obj = cart_data.find(o => o.name);
+    // console.log('obj:', obj.discription)
+
+    let img = document.getElementById("product_img")
+    img.src = obj.image
+
+    let p_name = document.getElementById("Product_name")
+    p_name.innerText = obj.name
+
+    let O_price = document.getElementById("O_price")
+    O_price.innerText = "₹ " + obj.OriginalPrice
+
+    let price = document.getElementById("price")
+    price.innerText = "₹ " + obj.price
 
 
-    //     console.log("product.name", product.name)
-    let data_div = document.getElementById("Product_Discription");
-    var total = 0;
-
-    cart_data.forEach(function(product) {
-        let IMGdiv = document.createElement("div");
-        let image = document.createElement("img");
-        image.src = product.image;
-
-        let Contentdiv = document.createElement("div");
-
-        let p_name = document.createElement("h3");
-        p_name.innerText = product.name;
-
-        let price_div = document.createElement("span");
-
-        let O_price = document.createElement("h4");
-        O_price.innerText = "₹" + product.OriginalPrice;
-
-        let p_price = document.createElement("h4");
-        p_price.innerText = "₹" + product.price;
-
-        let btn = document.createElement("button");
-        btn.innerText = "Add to Cart";
+    let Description_p = document.getElementById("Description_p")
+    Description_p.innerText = obj.discription
 
 
-        let Description = document.createElement("p");
-        p_price.innerText = "Description";
-
-        let DescriptionP = document.createElement("p");
-        p_price.innerText = product.discription;
-
-        btn.onclick = function() {
-            addtocart(product);
-        };
-
-        IMGdiv.append(image);
-
-        price_div.append(O_price, p_price);
-
-
-        Contentdiv.append(p_name, price_div, btn);
-
-        data_div.append(IMGdiv, Contentdiv);
-
-    });
-
-
-
-    if (localStorage.getItem("Mycart") === null) {
-        localStorage.setItem("Mycart", JSON.stringify([]));
+    if (localStorage.getItem("Cart ") === null) {
+        localStorage.setItem("Cart ", JSON.stringify([]));
     }
 
     function addtocart(p) {
-        let Mycart_data = JSON.parse(localStorage.getItem("Mycart"));
-        console.log('Mycart_data:', Mycart_data)
 
-        Mycart_data.push(p);
+        alert("y")
+        let cart_data = JSON.parse(localStorage.getItem("Cart"));
+        console.log('cart_data:', cart_data)
+            // cart_data = [];
+        console.log('cart_data:', cart_data)
 
-        localStorage.setItem("Mycart", JSON.stringify(Mycart_data));
-        let cart_len = Mycart_data.length
-        updateCart(cart_len)
+        cart_data.push(obj);
+        console.log('cart_data:', cart_data)
+        localStorage.setItem("Cart", JSON.stringify(cart_data));
+
     }
+
+
 
     //updating cart data
     function updateCart(cart_len) {
-        document.getElementById("shopping-cart-count").innerText = cart_len
+        document.getElementById("shopping-cart-count ").innerText = cart_len
     }
 </script>
