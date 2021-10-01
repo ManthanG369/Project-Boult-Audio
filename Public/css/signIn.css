@@ -51,7 +51,7 @@
     background: #ff6d6d;
 }
 
-input {
+.signin input {
     background-color: transparent;
     list-style: none;
     font-weight: 400;
@@ -62,7 +62,7 @@ input {
     border-bottom: 2px solid black;
 }
 
-textarea:focus,
+.signin textarea:focus,
 input:focus {
     outline: none;
 }

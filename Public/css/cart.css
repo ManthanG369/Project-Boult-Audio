@@ -42,10 +42,9 @@
     box-sizing: border-box;
     width: 300px;
     display: flex;
+    margin: auto;
     flex-direction: column;
     row-gap: 20px;
-    float: right;
-    margin-right: 30px;
     text-align: center;
     text-decoration: none;
     cursor: pointer;

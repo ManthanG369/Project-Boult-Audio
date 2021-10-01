@@ -161,7 +161,7 @@ function Clicked_Product(p) {
 updateCart()
 
 function updateCart() {
-    let cart_data = JSON.parse(localStorage.getItem("Mycart"));
+    let cart_data = JSON.parse(localStorage.getItem("Cart"));
     let cart_len = cart_data.length
     document.getElementById("shopping-cart-count").innerText = cart_len
 }

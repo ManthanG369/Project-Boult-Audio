@@ -2,6 +2,7 @@ function makePayment() {
 
     setTimeout(function() {
         alert("Payment Successful");
+        document.getElementById("payment").innerHTML = ""
         window.location = "cart.html"
             // window.location = "ProductDiscription.html"
         clearMycart()
@@ -13,10 +14,10 @@ makePayment()
 
 function clearMycart() {
     //      alert("clearedMycart")
-    let cart_data = JSON.parse(localStorage.getItem("Mycart"));
+    let cart_data = JSON.parse(localStorage.getItem("Cart"));
     cart_data = [];
     console.log('cart_data:', cart_data)
-    localStorage.setItem("Mycart", JSON.stringify(cart_data));
+    localStorage.setItem("Cart", JSON.stringify(cart_data));
     document.getElementById("data").innerHTML = ""
 
 
@@ -31,11 +32,10 @@ function clearMycart() {
 
     window.location = "cart.html"
 }
-
 updateCart()
 
 function updateCart() {
-    let cart_data = JSON.parse(localStorage.getItem("Mycart"));
+    let cart_data = JSON.parse(localStorage.getItem("Cart"));
     let cart_len = cart_data.length
     document.getElementById("shopping-cart-count").innerText = cart_len
 }

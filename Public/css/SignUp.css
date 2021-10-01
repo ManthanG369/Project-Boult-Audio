@@ -44,7 +44,7 @@
     background: #ff6d6d;
 }
 
-input {
+.SignUp input {
     background-color: transparent;
     list-style: none;
     font-weight: 400;
@@ -54,7 +54,7 @@ input {
     border-bottom: 2px solid black;
 }
 
-textarea:focus,
+.SignUp textarea:focus,
 input:focus {
     outline: none;
 }
