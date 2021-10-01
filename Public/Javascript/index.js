@@ -9,9 +9,9 @@ let images = [
 let container = document.getElementById("mySlideshow");
 
 function mySlideshow() {
-    let img = document.createElement("img");
-    img.src = images[0];
-    container.append(img);
+    // let img = document.createElement("img");
+    // img.src = images[0];
+    // container.append(img);
 
     let counter = 0;
     setInterval(function() {

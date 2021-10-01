@@ -1,6 +1,12 @@
+document.getElementById("cartempty").style.display = "none"
 let cart_data = JSON.parse(localStorage.getItem("Mycart"));
+console.log('cart_data:', cart_data)
 
 
+
+if (cart_data.length === 0) {
+    document.getElementById("cartempty").style.display = "block"
+}
 //     console.log("product.name", product.name)
 let data_div = document.getElementById("data");
 var total = 0;
@@ -30,12 +36,6 @@ cart_data.forEach(function(product) {
 
     div.append(image, p_name, p_price, input, P_total);
     data_div.append(div);
-
-
-
-
-
-
     total = total + Number(product.price);
 });
 
@@ -46,10 +46,16 @@ let total_h1 = document.getElementById("total");
 
 total_h1.innerText = `SUBTOTAL - ₹${total}`;
 
-function makePayment() {
+// store the total value in localStorage
+localStorage.setItem("Total", JSON.stringify(total));
 
+
+
+function makePayment() {
+    alert("y")
     setTimeout(function() {
         alert("Payment Successful");
+
         clearMycart()
     }, 2000);
 
@@ -66,6 +72,7 @@ function clearMycart() {
     document.getElementById("data").innerHTML = ""
     document.getElementById("total").innerText = 0
     updateCart()
+
 }
 
 updateCart()
