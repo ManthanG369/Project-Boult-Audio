@@ -9,11 +9,11 @@ let images = [
 let container = document.getElementById("mySlideshow");
 
 function mySlideshow() {
-    let img = document.createElement("img");
-    img.src = images[0];
-    container.append(img);
+    // let img = document.createElement("img");
+    // img.src = images[0];
+    // container.append(img);
 
-    let counter = 1;
+    let counter = 0;
     setInterval(function() {
 
         container.innerHTML = null
@@ -25,7 +25,7 @@ function mySlideshow() {
         img.src = images[counter];
         container.append(img);
         counter++;
-    }, 3000);
+    }, 2000);
 
 }
 mySlideshow()
@@ -39,30 +39,35 @@ const product = [{
         OriginalPrice: "4999.00",
         price: "1299.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/24_1_copy_750x.jpg?v=1632483864",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
     {
         name: "AirBass FX1",
         OriginalPrice: "4999.00",
         price: "1499.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/FX1Black1copy_750x.jpg?v=1632289965",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
     {
         name: "AirBass ProPods",
         OriginalPrice: "7999.00",
         price: "1299.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/Black5_bc2c75ae-e14b-48b8-9202-64d8d514893c_750x.jpg?v=1601558066",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
     {
         name: "AirBass Combuds",
         OriginalPrice: "4999.00",
         price: "1299.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/Thumbnail_ecae2ec7-e53d-4dab-ac91-18f1ea9d592d_750x.jpg?v=1604387067",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
     {
         name: "AirBass Q10",
         OriginalPrice: "4999.00",
         price: "1299.00",
         image: "https://cdn.shopify.com/s/files/1/0378/5968/8492/products/1copy_750x.jpg?v=1632294030",
+        discription: "24h Playtime, IPX5 Water resistant, Touch controls, Built-in Low latency for gaming "
     },
 
 
@@ -107,17 +112,17 @@ function showProducts() {
         let image = document.createElement("img");
         image.src = product.image;
 
-        let btn = document.createElement("button");
-        btn.innerText = "Add to Cart";
+        // let btn = document.createElement("button");
+        // btn.innerText = "Add to Cart";
 
-        // div.onclick = function() {
-        //     Clicked_Product(product);
-        // };
-        btn.onclick = function() {
-            addtocart(product);
+        div.onclick = function() {
+            Clicked_Product(product);
         };
+        // btn.onclick = function() {
+        //     addtocart(product);
+        // };
         price_div.append(O_price, p_price)
-        div.append(image, p_name, price_div, btn);
+        div.append(image, p_name, price_div);
         data_div.append(div);
 
     });
@@ -138,22 +143,25 @@ function Clicked_Product(p) {
     window.location = "ProductDiscription.html"
 }
 
-if (localStorage.getItem("cart") === null) {
-    localStorage.setItem("cart", JSON.stringify([]));
-}
+// if (localStorage.getItem("cart") === null) {
+//     localStorage.setItem("cart", JSON.stringify([]));
+// }
 
-function addtocart(p) {
-    // alert("yes")
-    let cart_data = JSON.parse(localStorage.getItem("cart"));
+// function addtocart(p) {
+//     // alert("yes")
+//     let cart_data = JSON.parse(localStorage.getItem("cart"));
 
-    cart_data.push(p);
+//     cart_data.push(p);
 
-    localStorage.setItem("cart", JSON.stringify(cart_data));
+//     localStorage.setItem("cart", JSON.stringify(cart_data));
+//     let cart_len = cart_data.length
+//     console.log('cart_len:', cart_len)
+//     updateCart()
+// }
+updateCart()
+
+function updateCart() {
+    let cart_data = JSON.parse(localStorage.getItem("Mycart"));
     let cart_len = cart_data.length
-    console.log('cart_len:', cart_len)
-    updateCart(cart_len)
-}
-
-function updateCart(cart_len) {
     document.getElementById("shopping-cart-count").innerText = cart_len
 }

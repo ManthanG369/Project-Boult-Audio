@@ -83,22 +83,21 @@ nav ul li:nth-child(5) a {
 }
 
 #shopping-cart {
-    height: 35px;
+    height: 50px;
     width: auto;
     vertical-align: middle;
-}
-
-.shopping-cart {
-    /* border: 1px solid red; */
-    background-color: #1AB9CD;
-    width: 5vw;
     border-radius: 50%;
 }
 
 #shopping-cart-count {
     background-color: white;
     color: #128bc4;
-    font-weight: 700;
-    border-radius: 40%;
+    height: max-content;
+    font-weight: 500;
+    border-radius: 50%;
     vertical-align: middle;
+    line-height: 2px;
+    position: relative;
+    right: 30px;
+    top: -8px
 }

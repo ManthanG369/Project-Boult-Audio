@@ -51,7 +51,7 @@
                 </i>
             </li>
             <li class="shopping-cart">
-                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="../imges\shopping-cart.png" alt="">
+                <a href="..\HTML\cart.html"> <img id="shopping-cart" src="..\imges\ShoppingCart.png" alt="">
                     <span id="shopping-cart-count">0</span></a>
                 </i>
 
@@ -80,45 +80,5 @@
 </body>
 
 </html>
-<script>
-    if (localStorage.getItem("Users") === null) {
-        localStorage.setItem("Users", JSON.stringify([]));
-    }
-
-    function signup(e) {
-        e.preventDefault();
-        let myform = document.getElementById("myform");
-
-        let F_name = myform.F_name.value;
-        let Mobile = myform.Mobile.value;
-        let email = myform.email.value;
-        let password = myform.password.value;
-
-
-        let user = {
-            name: F_name,
-            email: email,
-            password: password,
-            Mycart: []
-        };
-
-        if (localStorage.getItem("Users") === null) {
-            localStorage.setItem("Users", JSON.stringify([]));
-        }
-        //get array from localstorage
-        let arr = JSON.parse(localStorage.getItem("Users")); // existing users
-
-        arr.push(user);
-
-        localStorage.setItem("Users", JSON.stringify(arr));
-        SignUpSucces(myform);
-    }
-
-    function SignUpSucces(myform) {
-        alert("SignUpsuccessful")
-        let data = document.getElementsByClassName("SignUp")
-        data.remove()
-            // window.location = "Product.html";
-            // window.location = "index.html";
-    }
+<script src="..\Javascript\SignUp.js">
 </script>

@@ -1,19 +1,72 @@
-#data {
+#Maindata {
     display: flex;
     margin: 100px;
     flex-direction: column;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    text-align: center;
 }
 
 #data img {
     width: 20%;
 }
 
+#Maindata hr {
+    height: 1px;
+    background-color: black;
+}
+
+.cont {
+    width: 44%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 56%;
+}
+
+#data input {
+    width: 60px;
+}
+
+.cont h3 {
+    font-size: 20px;
+}
+
 #data div {
     display: flex;
-    margin: 10px;
-    border: 1px solid red;
-    /* flex-direction: column; */
+    margin: auto;
     align-items: center;
     justify-content: space-between;
+}
+
+#checkout {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    float: right;
+    margin-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#checkout button {
+    background-color: #FF6D6D;
+    cursor: pointer;
+    width: 70%;
+    margin: auto;
+    color: #FFFFFF;
+    padding: 14px 22px;
+    border-radius: 20px;
+    border: none;
+}
+
+#checkout a {
+    color: black;
+    font-weight: 500;
+}
+
+#cartempty {
+    display: block;
 }
