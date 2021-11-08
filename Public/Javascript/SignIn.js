@@ -3,7 +3,7 @@ function SignIn(e) {
     console.log("y");
     let myform = document.getElementById("myform")
     let email = myform.email.value;
-    let password = myform.password.value;
+     let password = myform.password.value;
 
 
     console.log("data", email, password);
@@ -33,10 +33,10 @@ function SignIn(e) {
 
 
 }
-updateCart()
+// updateCart()
 
-function updateCart() {
-    let cart_data = JSON.parse(localStorage.getItem("Cart"));
-    let cart_len = cart_data.length
-    document.getElementById("shopping-cart-count").innerText = cart_len
-}
+// function updateCart() {
+//     let cart_data = JSON.parse(localStorage.getItem("Cart"));
+//     let cart_len = cart_data.length
+//     document.getElementById("shopping-cart-count").innerText = cart_len
+// }

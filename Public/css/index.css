@@ -1,17 +1,55 @@
 /* sliding bar css start here */
-
+/* 
 #mySlideshow img {
     width: 100%;
     box-sizing: border-box;
     overflow-y: hidden;
     transition: right 10s;
+} */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */
+
 }
 
+#mySlideshow{
+    
+}
+#slider{
+    width:300%;
+    display: flex;
+    transition: 0.7s ;
+   
+}
+
+#slider img{
+    width: 100%;
+}
+
+.indicators{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.indicators span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(119, 117, 117, 0.611);
+    cursor: pointer;
+}
+.active{
+    background: black !important;
+}
 
 /* product css */
 
 #Product_categories h1 {
-    margin: auto;
+    margin: 20px auto;
     text-align: center;
     font-family: "Avenir Next", sans-serif;
 }

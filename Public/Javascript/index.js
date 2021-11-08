@@ -1,36 +1,82 @@
 // slide show js //
-let images = [
-    "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/Freedom-Desktop_1944x.png?v=1622647613",
-    "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/HomeBanner-FX1_1944x.png?v=1620414395",
-    "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/Kriti_1944x.png?v=1602509772"
-];
+// let images = [
+//     "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/Freedom-Desktop_1944x.png?v=1622647613",
+//     "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/HomeBanner-FX1_1944x.png?v=1620414395",
+//     "https://cdn.shopify.com/s/files/1/0378/5968/8492/files/Kriti_1944x.png?v=1602509772"
+// ];
 
 
-let container = document.getElementById("mySlideshow");
+// let container = document.getElementById("mySlideshow");
 
-function mySlideshow() {
-    // let img = document.createElement("img");
-    // img.src = images[0];
-    // container.append(img);
+// function mySlideshow() {
+//     // let img = document.createElement("img");
+//     // img.src = images[0];
+//     // container.append(img);
 
-    let counter = 0;
-    setInterval(function() {
+//     let counter = 0;
+//     setInterval(function() {
 
-        container.innerHTML = null
-        if (counter === images.length) {
-            counter = 0
-                // setTimeout();
-        }
-        let img = document.createElement("img");
-        img.src = images[counter];
-        container.append(img);
-        counter++;
-    }, 2000);
+//         container.innerHTML = null
+//         if (counter === images.length) {
+//             counter = 0
+//                 // setTimeout();
+//         }
+//         let img = document.createElement("img");
+//         img.src = images[counter];
+//         container.append(img);
+//         counter++;
+//     }, 2000);
 
+// }
+// mySlideshow()
+
+
+
+var slide=document.getElementById("slider")
+var btn1=document.getElementById("btn1")
+var btn2=document.getElementById("btn2")
+var btn3=document.getElementById("btn3")
+
+btn1.addEventListener("click",slider1)
+btn2.addEventListener("click",slider2)
+btn3.addEventListener("click",slider3)
+
+function slider1(){
+        slide.style.transform="translateX(0px)"
+        btn1.classList.add("active")
+        btn2.classList.remove("active")
+        btn3.classList.remove("active")
+    }
+
+function slider2 (){
+        slide.style.transform="translateX(-33.33%)"
+        btn2.classList.add("active")
+        btn1.classList.remove("active")
+        btn3.classList.remove("active")
+    }
+
+function slider3(){
+        slide.style.transform="translateX(-66.66%)"
+        btn3.classList.add("active")
+        btn1.classList.remove("active")
+        btn2.classList.remove("active")
+    }
+
+// interval=
+
+
+// for initial two sec
+setTimeout(slider2,2000)
+setTimeout(slider3,4000)
+
+
+// for infinite side slideshow
+setInterval(slideshow,6000)
+function slideshow(){
+    setTimeout(slider1,)
+    setTimeout(slider2,2000)
+    setTimeout(slider3,4000)
 }
-mySlideshow()
-
-
 
 
 //Product localstorge

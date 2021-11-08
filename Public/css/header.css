@@ -13,6 +13,7 @@ nav {
     top: 0;
     background-color: rgba(0, 0, 0, 0.3);
     font-family: "Avenir Next", sans-serif;
+    z-index: 10;
 }
 
 #BoultAudio_logo {
